@@ -3,8 +3,7 @@ fn main() {
 
     if number < 5 {
         println!("True\n");
-    }
-    else{
+    } else {
         println!("False\n");
     }
 
@@ -14,55 +13,53 @@ fn main() {
     use_continue();
     println!("\n");
     value_from_loop();
-
+    println!("\n");
+    named_loops();
+    println!("\n");
+    while_loop();
 }
 
 // Else if
 
-fn else_if(){
+fn else_if() {
     let number = 10;
 
-    if number %2 ==0{
-        println!("Even Number: {}\n",number);
-    }
-
-    else if number % 3 ==0 {
+    if number % 2 == 0 {
+        println!("Even Number: {}\n", number);
+    } else if number % 3 == 0 {
         println!("Odd Number: {number}");
-    }
-
-    else {
+    } else {
         println!("The number is neither even nor odd.");
     }
 }
 
 // if in let
 
-fn if_in_let(){
+fn if_in_let() {
     let condition = true;
-    let number = if condition { 5 } else {6}; // Types of if and else must be same always,or it will give error
+    let number = if condition { 5 } else { 6 }; // Types of if and else must be same always,or it will give error
 
     println!("Number : {number}");
 }
 
-fn infinite_loop(){
+fn infinite_loop() {
     loop {
         println!("Infinite Loop!"); //CTRL+C stops the code in terminal
     }
 }
 
-fn use_continue(){
+fn use_continue() {
     for num in 1..=10 {
-    if num % 2 == 0 {
-        continue; // Skip even numbers
+        if num % 2 == 0 {
+            continue; // Skip even numbers
+        }
+
+        println!("Number: {}", num);
     }
-
-    println!("Number: {}", num);
 }
 
-}
-
-fn value_from_loop(){
-    let mut counter=0;
+fn value_from_loop() {
+    let mut counter = 0;
 
     let result = loop {
         counter += 1;
@@ -71,4 +68,40 @@ fn value_from_loop(){
         }
     };
     println!("The result is {result}");
+}
+
+// Named Loops
+
+fn named_loops() {
+    let mut count = 0;
+    'counting_up: loop {
+        println!("count = {count}");
+        let mut remaining = 10;
+        loop {
+            println!("remaining = {remaining}");
+            if remaining == 9 {
+                break;
+            }
+            if count == 2 {
+                break 'counting_up;
+            }
+            remaining -= 1;
+        }
+        count += 1;
+    }
+    println!("End count = {count}");
+}
+
+// While Loop
+
+fn while_loop(){
+    let mut number = 3;
+
+    while number !=0 {
+        println!("{number}");
+
+        number -=1;
+    }
+
+    println!("TakeOFF!!");
 }
