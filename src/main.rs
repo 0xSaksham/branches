@@ -12,11 +12,20 @@ fn main() {
     // infinite_loop();
     use_continue();
     println!("\n");
+
     value_from_loop();
     println!("\n");
+
     named_loops();
     println!("\n");
+
     while_loop();
+    println!("\n");
+
+    rev_for_loop();
+    println!("\n");
+
+    for_loop();
 }
 
 // Else if
@@ -104,4 +113,23 @@ fn while_loop(){
     }
 
     println!("TakeOFF!!");
+}
+
+// For Loops
+
+fn rev_for_loop(){
+    for number in (1..=4).rev(){
+        println!("{number}");
+    }
+    println!("LiftOFF!!");
+}
+
+//Printing Array
+
+fn for_loop(){
+    let a = [1,2,3,4,5];
+
+    for element in a{
+        println!("{element}");
+    }
 }
