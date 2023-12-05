@@ -51,11 +51,11 @@ fn if_in_let() {
     println!("Number : {number}");
 }
 
-fn infinite_loop() {
-    loop {
-        println!("Infinite Loop!"); //CTRL+C stops the code in terminal
-    }
-}
+// fn infinite_loop() {
+//     loop {
+//         println!("Infinite Loop!"); //CTRL+C stops the code in terminal
+//     }
+// }
 
 fn use_continue() {
     for num in 1..=10 {
